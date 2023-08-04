@@ -49,8 +49,10 @@ export const Register = () => (
           <Field placeholder="email" name="email" type="email" />
           {errors.email && touched.email ? <div>{errors.email}</div> : null}
           <br></br>
-          <Field placeholder="username" name="username"/>
-          {errors.username && touched.username ? <div>{errors.username}</div> : null}
+          <Field placeholder="username" name="username" />
+          {errors.username && touched.username ? (
+            <div>{errors.username}</div>
+          ) : null}
           <br></br>
           <button type="submit">Submit</button>
         </Form>
