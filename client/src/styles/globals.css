@@ -26,6 +26,50 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.form{
-  background-color: aquamarine;
+.signupTitle{
+  text-align: center;
+}
+
+.form {
+  background-color: bisque;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.field-container {
+  margin-bottom: 10px;
+}
+
+.field-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.field-container input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.regBtn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form input{
+color: black;
 }

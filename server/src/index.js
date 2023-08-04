@@ -1,16 +1,17 @@
 const express = require("express");
 //importing route
 const userRoutes = require("./routes/users.js");
-const connectDb = require('./db/connection.js')
-require('dotenv').config()
-
+const productRoutes = require("./routes/product.js");
+const cors = require("cors");
+const connectDb = require("./db/connection.js");
+require("dotenv").config();
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 //Using route
 app.use(userRoutes);
-
-
+app.use(productRoutes);
 
 connectDb();
 const port = process.env.PORT;
