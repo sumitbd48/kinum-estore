@@ -8,4 +8,14 @@ const addNewProducts = async (req, res) => {
   });
 };
 
-module.exports = { addNewProducts };
+const getAllProducts = async (req, res) => {
+  const data = await Products.find();
+  if (data) {
+    res.json({
+      productsList: data,
+      msg: "success",
+    });
+  }
+};
+
+module.exports = { addNewProducts, getAllProducts };
