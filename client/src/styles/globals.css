@@ -8,14 +8,6 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -72,4 +64,17 @@ body {
 
 .form input{
 color: black;
+}
+
+.Card{
+  width: 250px;
+  height: 300px;
+  margin: 10px;
+  padding: 10px;
+  background-color: antiquewhite;
+  color: black;
+}
+
+.Products{
+  display: flex;
 }
