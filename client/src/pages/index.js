@@ -5,10 +5,12 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Badge from "@mui/material/Badge";
 import MailIcon from "@mui/icons-material/Mail";
 import Navbar from "@/components/Navbar";
+import { useSelector } from "react-redux";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const {name} = useSelector(state=>state.user)
   const [productsList, setProductsList] = useState([]);
 
   const fetchAllProducts = async () => {
@@ -23,6 +25,7 @@ export default function Home() {
 
   return (
     <div>
+      <div>{name}</div>
       <Navbar />
       <Badge badgeContent={4} color="primary">
         <ShoppingCartIcon color="action" />

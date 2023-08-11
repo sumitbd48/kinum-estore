@@ -36,37 +36,41 @@ export const Register = () => (
     >
       {({ errors, touched }) => (
         <Form className="form">
-          <div className="field-container">
-            <Field placeholder="firstName" name="firstName" />
-            {errors.firstName && touched.firstName ? (
-              <div className="error">{errors.firstName}</div>
-            ) : null}
+          <div className="centered-form">
+            <div className="field-container">
+              <Field placeholder="firstName" name="firstName" />
+              {errors.firstName && touched.firstName ? (
+                <div className="error">{errors.firstName}</div>
+              ) : null}
+            </div>
+            <br></br>
+            <div className="field-container">
+              <Field placeholder="lastName" name="lastName" />
+              {errors.lastName && touched.lastName ? (
+                <div className="error">{errors.lastName}</div>
+              ) : null}
+            </div>
+            <br></br>
+            <div className="field-container">
+              <Field placeholder="email" name="email" type="email" />
+              {errors.email && touched.email ? (
+                <div className="error">{errors.email}</div>
+              ) : null}
+            </div>
+            <br></br>
+            <div className="field-container">
+              <Field placeholder="username" name="username" />
+              {errors.username && touched.username ? (
+                <div className="error">{errors.username}</div>
+              ) : null}
+            </div>
+            <br></br>
+            <div className="btnContainer">
+              <button className="regBtn" type="submit">
+                Submit
+              </button>
+            </div>
           </div>
-          <br></br>
-          <div className="field-container">
-            <Field placeholder="lastName" name="lastName" />
-            {errors.lastName && touched.lastName ? (
-              <div className="error">{errors.lastName}</div>
-            ) : null}
-          </div>
-          <br></br>
-          <div className="field-container">
-            <Field placeholder="email" name="email" type="email" />
-            {errors.email && touched.email ? (
-              <div className="error">{errors.email}</div>
-            ) : null}
-          </div>
-          <br></br>
-          <div className="field-container">
-            <Field placeholder="username" name="username" />
-            {errors.username && touched.username ? (
-              <div className="error">{errors.username}</div>
-            ) : null}
-          </div>
-          <br></br>
-          <button className="regBtn" type="submit">
-            Submit
-          </button>
         </Form>
       )}
     </Formik>
