@@ -1,7 +1,7 @@
 import React from "react";
-
+import UserMenu from '@/components/UserMenu'
 function index() {
-  return <div>I am home!</div>;
+  return <div><UserMenu/></div>;
 }
 
 export default index;

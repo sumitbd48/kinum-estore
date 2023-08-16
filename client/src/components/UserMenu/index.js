@@ -2,6 +2,8 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { useSelector, useDispatch } from 'react-redux'
+import { handleLogout } from '@/redux/reducerSlices/userSlice';
 
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -12,6 +14,7 @@ export default function BasicMenu() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const dispatch = useDispatch()
 
   return (
     <div>
@@ -35,7 +38,7 @@ export default function BasicMenu() {
       >
         <MenuItem onClick={handleClose}>Profile</MenuItem>
         <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={()=>dispatch(handleLogout)}>Logout</MenuItem>
       </Menu>
     </div>
   );

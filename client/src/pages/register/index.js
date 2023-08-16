@@ -20,12 +20,16 @@ const SignupSchema = Yup.object().shape({
     .min(2, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
+  phoneNumber: Yup.string()
+    .min(7, "Too Short!")
+    .max(15, "Too Long!")
+    .required("Required"),
 });
 
 export const Register = () => {
   const registerUser = async (values) => {
     try {
-      const response = await fetch("http://localhost:3000/register", {
+      const response = await fetch("http://localhost:8080/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -48,6 +52,7 @@ export const Register = () => {
           email: "",
           username: "",
           password: "",
+          phoneNumber: "",
         }}
         validationSchema={SignupSchema}
         onSubmit={(values) => {
@@ -77,6 +82,13 @@ export const Register = () => {
                 <Field placeholder="email" name="email" type="email" />
                 {errors.email && touched.email ? (
                   <div className="error">{errors.email}</div>
+                ) : null}
+              </div>
+              <br></br>
+              <div className="field-container">
+                <Field placeholder="Phone Number" name="phoneNumber" />
+                {errors.phoneNumber && touched.phoneNumber ? (
+                  <div className="error">{errors.phoneNumber}</div>
                 ) : null}
               </div>
               <br></br>
