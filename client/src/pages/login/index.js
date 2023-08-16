@@ -1,6 +1,8 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import { setUserDetails } from '../../redux/reducerSlices/userSlice'
+import { useDispatch, useSelector } from 'react-redux'
 
 const LoginSchema = Yup.object().shape({
   phoneNumber: Yup.string()
@@ -14,6 +16,7 @@ const LoginSchema = Yup.object().shape({
 });
 
 export const Login = () => {
+  const dispatch = useDispatch()
   const handleLogin = async (values) => {
     try {
       const response = await fetch("http://localhost:8080/login", {

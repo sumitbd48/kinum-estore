@@ -22,10 +22,13 @@ const regsiterNewUser = async (req, res) => {
 
 const loginUser = async (req, res) => {
   console.log(req.body);
-  const data = await Users.findOne({ phoneNumber: req.body.phoneNumber });
+  const data = await Users.findOne({
+    phoneNumber: req.body.phoneNumber,
+  }).lean();
   if (data) {
     const isMatched = await bcrypt.compare(req.body.password, data.password);
     if (isMatched) {
+      const { password, ...userDetails } = data;
       const token = jwt.sign(
         { phoneNumber: req.body.phoneNumber },
         process.env.SECRET_KEY
@@ -33,6 +36,7 @@ const loginUser = async (req, res) => {
       res.json({
         success: true,
         token,
+        userDetails,
       });
     } else {
       res.json({
