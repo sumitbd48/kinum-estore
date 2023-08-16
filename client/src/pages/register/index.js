@@ -25,7 +25,7 @@ const SignupSchema = Yup.object().shape({
 export const Register = () => {
   const registerUser = async (values) => {
     try {
-      const response = await fetch("http://localhost:3005/user/register", {
+      const response = await fetch("http://localhost:3000/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
