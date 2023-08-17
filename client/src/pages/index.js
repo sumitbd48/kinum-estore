@@ -15,7 +15,6 @@ export default function Main() {
   if (isLoggedIn) {
     return <Home />;
   } else {
-    const { name } = useSelector((state) => state.user);
     const [productsList, setProductsList] = useState([]);
 
     const fetchAllProducts = async () => {
@@ -30,7 +29,6 @@ export default function Main() {
 
     return (
       <div>
-        <div>{name}</div>
         <Navbar />
         <Badge badgeContent={4} color="primary">
           <ShoppingCartIcon color="action" />
