@@ -7,6 +7,7 @@ import { handleLogout } from '@/redux/reducerSlices/userSlice';
 import { useRouter } from 'next/router';
 
 export default function BasicMenu() {
+  const router = useRouter();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -38,7 +39,7 @@ export default function BasicMenu() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={() => router.push('/register')}>Profile</MenuItem>
         <MenuItem onClick={handleClose}>My account</MenuItem>
         <MenuItem onClick={()=>dispatch(handleLogout())}>Logout</MenuItem>
       </Menu>

@@ -3,16 +3,12 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 
 const SignupSchema = Yup.object().shape({
-  firstName: Yup.string()
-    .min(2, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
-  lastName: Yup.string()
+  fullName: Yup.string()
     .min(2, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
   email: Yup.string().email("Invalid email").required("Required"),
-  username: Yup.string()
+  userName: Yup.string()
     .min(5, "Too Short!")
     .max(20, "Too Long!")
     .required("Required"),
@@ -47,10 +43,9 @@ export const Register = () => {
       <h1 className="signupTitle">Signup</h1>
       <Formik
         initialValues={{
-          firstName: "",
-          lastName: "",
+          fullName: "",
           email: "",
-          username: "",
+          userName: "",
           password: "",
           phoneNumber: "",
         }}
@@ -65,16 +60,9 @@ export const Register = () => {
           <Form className="form">
             <div className="centered-form">
               <div className="field-container">
-                <Field placeholder="firstName" name="firstName" />
-                {errors.firstName && touched.firstName ? (
-                  <div className="error">{errors.firstName}</div>
-                ) : null}
-              </div>
-              <br></br>
-              <div className="field-container">
-                <Field placeholder="lastName" name="lastName" />
-                {errors.lastName && touched.lastName ? (
-                  <div className="error">{errors.lastName}</div>
+                <Field placeholder="fullName" name="fullName" />
+                {errors.fullName && touched.fullName ? (
+                  <div className="error">{errors.fullName}</div>
                 ) : null}
               </div>
               <br></br>
@@ -93,9 +81,9 @@ export const Register = () => {
               </div>
               <br></br>
               <div className="field-container">
-                <Field placeholder="username" name="username" />
-                {errors.username && touched.username ? (
-                  <div className="error">{errors.username}</div>
+                <Field placeholder="userName" name="userName" />
+                {errors.userName && touched.userName ? (
+                  <div className="error">{errors.userName}</div>
                 ) : null}
               </div>
               <br></br>
