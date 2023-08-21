@@ -64,7 +64,7 @@
 color: black;
 }
 
-.Card{
+/* .Card{
   width: 250px;
   height: 300px;
   margin: 10px;
@@ -75,4 +75,32 @@ color: black;
 
 .Products{
   display: flex;
+} */
+
+/* main.css */
+
+.Products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px auto;
+  max-width: 1200px auto;
+  background-color: bisque;
+}
+
+.Card {
+  border: 1px solid #491cb3;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  width: 300px;
+}
+
+.Card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.ShoppingCartIcon {
+  cursor: pointer;
 }

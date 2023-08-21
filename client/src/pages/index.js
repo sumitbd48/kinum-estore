@@ -44,6 +44,7 @@ export default function Main() {
                   height={300}
                 />
                 {item.productName}
+                <br/>
                 {item.productPrice}
                 <ShoppingCartIcon onClick={() => alert(item._id)} />
               </div>

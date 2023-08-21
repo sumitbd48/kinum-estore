@@ -18,4 +18,8 @@ const getAllProducts = async (req, res) => {
   }
 };
 
-module.exports = { addNewProducts, getAllProducts };
+const getProductById = async (req, res) => {
+   console.log(req.params.productId);
+};
+
+module.exports = { addNewProducts, getAllProducts ,getProductById };
